@@ -1,0 +1,157 @@
+<!Template for AWC configuration by DMHO>
+<!DOCTYPE html>
+<html>
+<head>
+<title>AWC Configuration</title>
+<style>
+	body{
+	font-family:verdana;
+	font-weight:400;
+}
+h1{
+	font-size:30px;
+	font-weight:400;
+}
+h2{
+	font-size:25px;
+	font-weight:400;
+}
+h3{
+	font-size:20px;
+	font-weight:400;
+}
+h4{
+	font-size:18px;
+	font-weight:400;
+}
+sup
+{
+color:red;
+}
+ .submit {font-size:10pt;
+    width: 90px;
+    height: 30px;
+    display: block;
+    margin: 2.5em auto 0;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+	margin-top:10px;
+	background-color:#FF7F50;
+	color:white;
+	text-align:center;
+	margin-top:10px;
+}
+td,th
+{
+padding:2.2px;
+}
+
+
+input,select{
+border:solid;
+border-color:#008000;
+}
+
+th{
+	color:#008000;
+	text-align:left;
+}
+@media screen and (max-device-width: 1200px)
+{
+ .submit {font-size:17pt;
+    width: 120px;
+    height: 60px;
+}
+h1{
+	font-size:25px;
+	font-weight:400;
+}
+h2{
+	font-size:20px;
+	font-weight:400;
+}
+h3{
+	font-size:18px;
+	font-weight:400;
+}
+h4{
+	font-size:15px;
+	font-weight:400;
+}
+input,select{
+	height:40px;
+	font-size:17pt;
+	width:180px;
+}
+body{
+	font-size:17pt;
+}
+}
+table, th, td {
+	text-align:center;
+	border:1px solid black;
+border-collapse:collapse;
+}
+
+</style>
+ <script type="text/javascript" src="{{ url_for('static',filename='scripts/country.js') }}"></script>
+<script>
+	function selectAll(source) {
+		checkboxes = document.getElementsByName('box1[]');
+		for(var i in checkboxes)
+			checkboxes[i].checked = source.checked;
+	}
+</script>
+</head>
+<body>
+<form action='/awcconfig1' method="POST">
+	<h1 style="color:#FF7F50;text-align:center;">AWC CONFIGURATION</h1>
+	<table border="0" align="center" style="text-align:left;" width="500">
+	<th style="background-color:#ffa368;color:white;width:20px;"><input type="checkbox" id="selectall" onClick="selectAll(this)" /></th>
+	<th style="background-color:#ffa368;color:white;width:70px;">AWC</th>
+	<th style="background-color:#ffa368;color:white;width:70px;"><b>Name of AWC</b></th>
+	<tr>
+	<td><input type="checkbox" name="box1[]" value="AWC1" style="width:30px;"></td>
+	<td>AWC1</td>
+	<td><input type="text" name="AWC1"></td>
+	</tr>
+	<tr>
+	<td><input type="checkbox" name="box1[]" value="AWC2"style="width:30px;"></td>
+	<td>AWC2</td>
+	<td><input type="text" name="AWC2"></td>
+	</tr>
+	<tr>
+	<td><input type="checkbox" name="box1[]" value="AWC3" style="width:30px;"></td>
+	<td>AWC3</td>
+	<td><input type="text" name="AWC3"></td>
+	</tr><tr>
+	<td><input type="checkbox" name="box1[]" value="AWC4" style="width:30px;"></td>
+	<td>AWC4</td>
+	<td><input type="text" name="AWC4"></td>
+	</tr>
+	<tr>
+	<td><input type="checkbox" name="box1[]" value="AWC5" style="width:30px;"></td>
+	<td>AWC5</td>
+	<td><input type="text" name="AWC5"></td>
+	</tr>
+	</table>
+	</br>
+	</br><button class="btn submit">Add AWCs</button>
+		<h2 style="color:#FF7F50;text-align:center;">{{msg}}</h2>
+	</form>
+
+</body>
+</html>
+
+
+
